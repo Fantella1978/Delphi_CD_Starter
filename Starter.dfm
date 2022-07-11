@@ -1,0 +1,207 @@
+object FormCD: TFormCD
+  Left = 214
+  Top = 176
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'CDStarter 1,0'
+  ClientHeight = 209
+  ClientWidth = 410
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMinimized
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnHide = FormHide
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CoolGroupBox1: TCoolGroupBox
+    Left = 0
+    Top = 0
+    Width = 281
+    Height = 121
+    ShadowColor = clWhite
+    Caption = 'Установки'
+    Color = clBtnFace
+    ParentColor = False
+    TabOrder = 0
+    object CoolLabel1: TCoolLabel
+      Left = 8
+      Top = 19
+      Width = 64
+      Height = 14
+      Caption = 'Устройство:'
+    end
+    object CoolLabel2: TCoolLabel
+      Left = 8
+      Top = 43
+      Width = 60
+      Height = 14
+      Caption = 'Выполнить:'
+    end
+    object Bevel1: TBevel
+      Left = 8
+      Top = 91
+      Width = 265
+      Height = 20
+      Shape = bsTopLine
+    end
+    object CoolLabel3: TCoolLabel
+      Left = 8
+      Top = 67
+      Width = 63
+      Height = 14
+      Caption = 'Параметры:'
+    end
+    object FilenameEdit1: TFilenameEdit
+      Left = 80
+      Top = 40
+      Width = 193
+      Height = 21
+      DefaultExt = 'exe'
+      FileEditStyle = fsComboBox
+      Filter = 'Программы (*.exe)|*.exe'
+      DialogOptions = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofNoNetworkButton]
+      DialogTitle = 'Выполнить'
+      DirectInput = False
+      NumGlyphs = 1
+      TabOrder = 0
+    end
+    object RzDriveComboBox1: TRzDriveComboBox
+      Left = 80
+      Top = 16
+      Width = 193
+      Height = 21
+      TabOrder = 1
+      TextCase = tcUpperCase
+      DriveTypes = [dtCDROM]
+    end
+    object CoolCheckRadioBox1: TCoolCheckRadioBox
+      Left = 8
+      Top = 97
+      Width = 193
+      Height = 17
+      Caption = 'Загружать при старте Windows'
+      UseDockManager = False
+      TabOrder = 2
+      TabStop = True
+    end
+    object Edit1: TEdit
+      Left = 80
+      Top = 64
+      Width = 193
+      Height = 21
+      TabOrder = 3
+    end
+  end
+  object RzDialogButtons1: TRzDialogButtons
+    Left = 0
+    Top = 173
+    Width = 410
+    CaptionOk = 'OK'
+    CaptionCancel = 'Cancel'
+    CaptionHelp = 'Help'
+    EnableOk = True
+    EnableCancel = False
+    EnableHelp = False
+    ShowCancelButton = False
+    OnClickOk = RzDialogButtons1ClickOk
+    TabOrder = 1
+  end
+  object CoolTrayIcon1: TCoolTrayIcon
+    Icon.Data = {
+      0000010001001010100001000400280100001600000028000000100000002000
+      0000010004000000000000000000000000000000000010000000000000000000
+      0000C0C0C0008080800000FF000000FFFF00FFFF0000C0C0C000000000000000
+      0000000000000000000000000000000000000000000000000000000000006666
+      6222226666666662211133226666662111113344266662611111344552666216
+      1111345512662111611634511126211116202511112621111306011111262111
+      3520211111262113354116111126623354411161126662355441111612666625
+      4441111126666662244111222666666662222266666666666666666666660000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000}
+    Interval = 0
+    PopupMenu = PopupMenu1
+    ToolTip = 'CDStarter'
+    Left = 312
+    Top = 40
+  end
+  object RzLauncher1: TRzLauncher
+    Action = 'Open'
+    Timeout = -1
+    Left = 344
+    Top = 8
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 344
+    Top = 40
+    object N3: TMenuItem
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000FF00FF80FF00
+        FF00FF00FF80FF00FF00FF00FF0000000000FFFFFFBFFFFFFF0000000080FF00
+        FF00FF00FF000000FF00000080000000FF00FF00FF0000000000FF00FF3F7F7F
+        7F000000000000000000000000BFFFFFFF00FFFFFF0000000000FF00FF80FF00
+        FF00FF00FF000000FF00000080000000FF0000000000008080007F7F7F000000
+        0000FFFFFFBFFFFFFF00FFFFFFBFFFFFFF0000000080FF00FF00FF00FF80FF00
+        FF00FF00FF000000FF00000080000000FF000080800000808000000000BFFFFF
+        FF000000000000000000FFFFFFBFFFFFFF0000000080FF00FF00FF00FF80FF00
+        FF00FF00FF000000FF00000080000000FF000080800000808000000000000000
+        0000FF00FF80FF00FF00000000BFFFFFFF0000000080FF00FF00FF00FF80FF00
+        FF00FF00FF000000FF00000080000000FF0000808080FF00FF000000003F7F7F
+        7F00FF00FF80FF00FF00000000BFFFFFFF0000000080FF00FF00FF00FF80FF00
+        FF000000FF000000FF000000FF000000FF000000FF80FF00FF00FF00FF80FF00
+        FF007F7F7F0000000000FFFFFF00000000007F7F7F80FF00FF00FF00FF000000
+        00000000800000008000000080000000800000008080FF00FF00FF00FF80FF00
+        FF0000000000000000000000003F7F7F7F00FF00FF80FF00FF00000000000080
+        8000008080000080800000000080FF00FF00FF00FF80FF00FF00FF00FF80FF00
+        FF00FF00FF80FF00FF00FF00FF80FF00FF00FF00FF0000000000008080000080
+        800000808080FF00FF0000000080FF00FF00FF00FF80FF00FF00FF00FF80FF00
+        FF000000000000000000FF00FF80FF00FF000000000000808000008080000080
+        8000FF00FF80FF00FF0000000080FF00FF00FF00FF80FF00FF00FF00FF000000
+        0000FF00FF0000000000FF00FF0000000000008080000080800000808080FF00
+        FF00FF00FF80FF00FF0000000080FF00FF00FF00FF80FF00FF0000000080FF00
+        FF00000000000000000000000000008080000080800000808000FF00FF80FF00
+        FF00FF00FF80FF00FF0000000080FF00FF00FF00FF80FF00FF00000000000000
+        00000000000000000000000000000000000000808080FF00FF00FF00FF80FF00
+        FF00FF00FF3F7F7F7F000000003F7F7F7F00FF00FF80FF00FF00FF00FF80FF00
+        FF000000000000000000000000000000000000000080FF00FF00FF00FF80FF00
+        FF00FF00FF3F7F7F7F000000003F7F7F7F00FF00FF80FF00FF00FF00FF80FF00
+        FF00008080000000000000000000000000000000003F7F7F7F00FF00FF80FF00
+        FF00FF00FF3F7F7F7F000000003F7F7F7F00FF00FF80FF00FF00FF00FF80FF00
+        FF000080800000808000FF00FF00000000000000000000000000000000000000
+        0000FF00FF80FF00FF00FF00FF80FF00FF00FF00FF80FF00FF00}
+      Caption = 'Настройки'
+      ShortCut = 16464
+      OnClick = N3Click
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object N1: TMenuItem
+      Caption = 'Закрыть'
+      OnClick = N1Click
+    end
+  end
+  object Timer1: TTimer
+    Interval = 500
+    OnTimer = Timer1Timer
+    Left = 312
+    Top = 8
+  end
+  object CoolDisksInformant1: TCoolDisksInformant
+    Left = 280
+    Top = 40
+  end
+  object Timer2: TTimer
+    Interval = 1
+    OnTimer = Timer2Timer
+    Left = 280
+    Top = 8
+  end
+end
